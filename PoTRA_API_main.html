@@ -1,0 +1,4594 @@
+<!DOCTYPE html>
+<html>
+<title>PoTRA Pan-Cancer mRNA Results</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+ * {
+	  box-sizing: border-box;
+	  font-family: Arial;
+}
+
+#myInput {
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 25%;
+  font-size: 14px;
+  padding: 8px 8px 5px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 12px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 8px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #f0efef;
+  color: DodgerBlue;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #f0f0f0;
+}
+</style>
+</head>
+<body>
+<img src="{{ user_image }}">
+<div class="w3-container">
+
+<h2 style="color:DodgerBlue;">PoTRA TCGA Pan-Cancer Results: Protein Coding mRNA Mediated Dysregulated Pathways in Cancer</h2>
+<p>The TCGA pan-cancer analysis utilized the PoTRA algorithm to detect dysregulated pathways from 17 primary sites. Only 7 of 17 primary sites are included in the table below and these are breast, colorectal, kidney, liver, lung, prostate and thyroid. These primary sites were chosen because they had a minimum of 50 samples in normal and case. For more information about the PoTRA algorithm please see the <a href="https://peerj.com/articles/4571.pdf">publication</a>. This work was supported by a Seven Bridges Cancer Genomics Cloud Collaborative Project funded by NCI. Please visit Bioconductor for the latest version of PoTRA <a href="https://bioconductor.org/packages/release/bioc/html/PoTRA.html"> </a>. The above image is credited to the National Human Genome Research Institute.
+</p>
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for dysregulated pathways.." title="Type in a pathway">
+<table id="myTable" style="width:100%", align="left">
+  <tr class="header" align="left">
+	<th>Pathway</th>
+	<th>TCGA Primary Site</th>
+    <th>Combined TCGA Projects</th>
+    <th>Average FE P-Value</th> 
+    <th>Average Rank</th>
+	<th>Average Number of Hub Genes in Cases</th>
+	<th>Average Number of Hub Genes in Normals</th>
+  </tr>
+  <tr>
+  <td>Pathways in cancer</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>9.97E-147</td>
+  <td>1</td>
+  <td>110</td>
+  <td>23</td>
+ </tr>
+ <tr>
+  <td>MAPK signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.52E-102</td>
+  <td>2</td>
+  <td>76</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>PI3K-Akt signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.17E-66</td>
+  <td>3</td>
+  <td>68</td>
+  <td>18</td>
+ </tr>
+ <tr>
+  <td>Ras signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>2.34E-45</td>
+  <td>5</td>
+  <td>46</td>
+  <td>12</td>
+ </tr>
+ <tr>
+  <td>Human papillomavirus infection</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>2.70E-43</td>
+  <td>5</td>
+  <td>51</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>Rap1 signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.57E-38</td>
+  <td>6</td>
+  <td>41</td>
+  <td>11</td>
+ </tr>
+ <tr>
+  <td>cAMP signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>5.17E-34</td>
+  <td>10</td>
+  <td>38</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>cGMP-PKG signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.16E-28</td>
+  <td>11</td>
+  <td>31</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Proteoglycans in cancer</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>2.19E-29</td>
+  <td>13</td>
+  <td>35</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Regulation of actin cytoskeleton</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.56E-27</td>
+  <td>14</td>
+  <td>33</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Insulin signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>3.24E-23</td>
+  <td>16</td>
+  <td>27</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Wnt signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.44E-22</td>
+  <td>18</td>
+  <td>28</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Fluid shear stress and atherosclerosis</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.06E-23</td>
+  <td>19</td>
+  <td>27</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Hepatocellular carcinoma</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>3.55E-21</td>
+  <td>19</td>
+  <td>29</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Tuberculosis</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>3.71E-20</td>
+  <td>19</td>
+  <td>29</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Cytokine-cytokine receptor interaction</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.41E-24</td>
+  <td>21</td>
+  <td>38</td>
+  <td>13</td>
+ </tr>
+ <tr>
+  <td>Breast cancer</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.39E-19</td>
+  <td>22</td>
+  <td>27</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Gastric cancer</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>8.16E-20</td>
+  <td>23</td>
+  <td>27</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Hippo signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.98E-19</td>
+  <td>24</td>
+  <td>27</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Chemokine signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>8.65E-21</td>
+  <td>25</td>
+  <td>29</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Vascular smooth muscle contraction</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.31E-16</td>
+  <td>25</td>
+  <td>22</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>MicroRNAs in cancer</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>3.37E-19</td>
+  <td>26</td>
+  <td>35</td>
+  <td>13</td>
+ </tr>
+ <tr>
+  <td>Dopaminergic synapse</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.85E-15</td>
+  <td>27</td>
+  <td>23</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Calcium signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.95E-18</td>
+  <td>28</td>
+  <td>28</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Parathyroid hormone synthesis secretion and action</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>2.63E-17</td>
+  <td>28</td>
+  <td>20</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Relaxin signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.28E-15</td>
+  <td>29</td>
+  <td>23</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Endocrine resistance</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.74E-15</td>
+  <td>31</td>
+  <td>19</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>HTLV-I infection</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>9.22E-17</td>
+  <td>31</td>
+  <td>29</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Axon guidance</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.50E-15</td>
+  <td>32</td>
+  <td>26</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>FoxO signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>3.27E-16</td>
+  <td>33</td>
+  <td>25</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Phospholipase D signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.94E-17</td>
+  <td>33</td>
+  <td>22</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Estrogen signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>5.94E-15</td>
+  <td>33</td>
+  <td>23</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Kaposi's sarcoma-associated herpesvirus infection</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.21E-14</td>
+  <td>34</td>
+  <td>24</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Platelet activation</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>8.92E-15</td>
+  <td>34</td>
+  <td>21</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Gap junction</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>3.45E-13</td>
+  <td>39</td>
+  <td>18</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>HIF-1 signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>5.18E-11</td>
+  <td>39</td>
+  <td>17</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Focal adhesion</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>6.66E-14</td>
+  <td>40</td>
+  <td>27</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Glycerophospholipid metabolism</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>2.63E-12</td>
+  <td>40</td>
+  <td>18</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Inflammatory mediator regulation of TRP channels</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.18E-10</td>
+  <td>44</td>
+  <td>17</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Insulin resistance</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.06E-10</td>
+  <td>45</td>
+  <td>17</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Melanogenesis</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.69E-10</td>
+  <td>47</td>
+  <td>17</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Neurotrophin signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.55E-10</td>
+  <td>48</td>
+  <td>18</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Signaling pathways regulating pluripotency of stem cells</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>8.91E-10</td>
+  <td>50</td>
+  <td>18</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Cushing's syndrome</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>3.89E-09</td>
+  <td>50</td>
+  <td>19</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>C-type lectin receptor signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>6.55E-10</td>
+  <td>50</td>
+  <td>18</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Apoptosis</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>9.79E-10</td>
+  <td>53</td>
+  <td>20</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Progesterone-mediated oocyte maturation</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.43E-07</td>
+  <td>53</td>
+  <td>17</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Jak-STAT signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.58E-10</td>
+  <td>54</td>
+  <td>23</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Osteoclast differentiation</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.00E-07</td>
+  <td>56</td>
+  <td>17</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Cellular senescence</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.52E-09</td>
+  <td>56</td>
+  <td>21</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Thermogenesis</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>5.30E-08</td>
+  <td>56</td>
+  <td>15</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>TGF-beta signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>9.16E-09</td>
+  <td>57</td>
+  <td>14</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>AGE-RAGE signaling pathway in diabetic complications</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.84E-07</td>
+  <td>59</td>
+  <td>15</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Th1 and Th2 cell differentiation</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>5.71E-06</td>
+  <td>61</td>
+  <td>14</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Melanoma</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.24E-07</td>
+  <td>63</td>
+  <td>13</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Glutamatergic synapse</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.86E-06</td>
+  <td>63</td>
+  <td>14</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Tryptophan metabolism</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>9.73E-06</td>
+  <td>63</td>
+  <td>9</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Glycerolipid metabolism</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.03E-05</td>
+  <td>63</td>
+  <td>11</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>VEGF signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>8.19E-06</td>
+  <td>66</td>
+  <td>11</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>T cell receptor signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.58E-05</td>
+  <td>68</td>
+  <td>14</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>GnRH signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>5.55E-06</td>
+  <td>70</td>
+  <td>14</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Hepatitis B</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>6.19E-06</td>
+  <td>70</td>
+  <td>17</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>AMPK signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>2.88E-08</td>
+  <td>72</td>
+  <td>15</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Long-term potentiation</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>2.66E-05</td>
+  <td>73</td>
+  <td>12</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Adrenergic signaling in cardiomyocytes</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.15E-05</td>
+  <td>73</td>
+  <td>18</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Epstein-Barr virus infection</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.72E-04</td>
+  <td>73</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Small cell lung cancer</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.54E-05</td>
+  <td>74</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Longevity regulating pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>7.56E-05</td>
+  <td>75</td>
+  <td>12</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Cell adhesion molecules (CAMs)</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>2.09E-04</td>
+  <td>76</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Circadian entrainment</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>6.04E-05</td>
+  <td>76</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Longevity regulating pathway - multiple species</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>2.40E-04</td>
+  <td>78</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>EGFR tyrosine kinase inhibitor resistance</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>3.19E-04</td>
+  <td>81</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Drug metabolism - other enzymes</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.11E-04</td>
+  <td>81</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Serotonergic synapse</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.73E-04</td>
+  <td>81</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Natural killer cell mediated cytotoxicity</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>8.14E-04</td>
+  <td>83</td>
+  <td>15</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Non-alcoholic fatty liver disease (NAFLD)</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.09E-03</td>
+  <td>89</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Th17 cell differentiation</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.19E-03</td>
+  <td>90</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Renin secretion</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.50E-03</td>
+  <td>91</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Inositol phosphate metabolism</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.09E-04</td>
+  <td>91</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Amphetamine addiction</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.69E-02</td>
+  <td>92</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Oocyte meiosis</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.71E-03</td>
+  <td>92</td>
+  <td>13</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Endocytosis</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.31E-02</td>
+  <td>93</td>
+  <td>11</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Adipocytokine signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>2.37E-03</td>
+  <td>94</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Alanine aspartate and glutamate metabolism</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>7.38E-03</td>
+  <td>94</td>
+  <td>7</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Necroptosis</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.31E-02</td>
+  <td>95</td>
+  <td>15</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Cortisol synthesis and secretion</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.61E-02</td>
+  <td>95</td>
+  <td>8</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Long-term depression</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>2.88E-02</td>
+  <td>97</td>
+  <td>8</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Thyroid hormone signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>3.12E-02</td>
+  <td>98</td>
+  <td>12</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Colorectal cancer</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>8.34E-03</td>
+  <td>99</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Glucagon signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>8.33E-03</td>
+  <td>101</td>
+  <td>11</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Glutathione metabolism</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>8.70E-03</td>
+  <td>101</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Apelin signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>4.97E-02</td>
+  <td>103</td>
+  <td>13</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Oxytocin signaling pathway</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.02E-04</td>
+  <td>103</td>
+  <td>17</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Glioma</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>3.32E-02</td>
+  <td>103</td>
+  <td>9</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Pancreatic cancer</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>3.53E-02</td>
+  <td>106</td>
+  <td>9</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Amoebiasis</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>3.74E-02</td>
+  <td>109</td>
+  <td>8</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Morphine addiction</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>2.63E-02</td>
+  <td>110</td>
+  <td>8</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Central carbon metabolism in cancer</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.61E-02</td>
+  <td>111</td>
+  <td>8</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Type II diabetes mellitus</td>
+  <td>Breast</td>
+  <td>No</td>
+  <td>1.81E-02</td>
+  <td>117</td>
+  <td>8</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Pathways in cancer</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>6.61E-44</td>
+  <td>2</td>
+  <td>60</td>
+  <td>23</td>
+ </tr>
+ <tr>
+  <td>MAPK signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>8.47E-23</td>
+  <td>5</td>
+  <td>38</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>Hepatocellular carcinoma</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>5.62E-20</td>
+  <td>7</td>
+  <td>27</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Breast cancer</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>8.05E-14</td>
+  <td>10</td>
+  <td>22</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Ras signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>1.92E-10</td>
+  <td>19</td>
+  <td>26</td>
+  <td>12</td>
+ </tr>
+ <tr>
+  <td>Thermogenesis</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>1.65E-08</td>
+  <td>20</td>
+  <td>15</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>HIF-1 signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>7.87E-09</td>
+  <td>21</td>
+  <td>15</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Regulation of actin cytoskeleton</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>2.65E-09</td>
+  <td>21</td>
+  <td>21</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Glycerophospholipid metabolism</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>2.66E-11</td>
+  <td>22</td>
+  <td>16</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Neurotrophin signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>1.14E-07</td>
+  <td>23</td>
+  <td>16</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Purine metabolism</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>4.58E-11</td>
+  <td>23</td>
+  <td>22</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Hippo signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>2.69E-07</td>
+  <td>24</td>
+  <td>19</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Necroptosis</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>2.27E-07</td>
+  <td>25</td>
+  <td>19</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Proteoglycans in cancer</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>5.80E-07</td>
+  <td>26</td>
+  <td>21</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Endocrine resistance</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>6.16E-06</td>
+  <td>27</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Wnt signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>1.04E-06</td>
+  <td>28</td>
+  <td>18</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Retrograde endocannabinoid signaling</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>4.50E-05</td>
+  <td>33</td>
+  <td>14</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>GnRH signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>8.26E-05</td>
+  <td>37</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Ovarian steroidogenesis</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>3.55E-05</td>
+  <td>39</td>
+  <td>8</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Apoptosis</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>8.70E-04</td>
+  <td>40</td>
+  <td>15</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Inflammatory mediator regulation of TRP channels</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>1.03E-03</td>
+  <td>41</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Fc gamma R-mediated phagocytosis</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>2.81E-03</td>
+  <td>42</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>EGFR tyrosine kinase inhibitor resistance</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>4.77E-04</td>
+  <td>43</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>VEGF signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>1.98E-03</td>
+  <td>45</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Rap1 signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>3.29E-03</td>
+  <td>48</td>
+  <td>19</td>
+  <td>11</td>
+ </tr>
+ <tr>
+  <td>Gastric cancer</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>6.25E-03</td>
+  <td>48</td>
+  <td>15</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>mTOR signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>6.43E-12</td>
+  <td>54</td>
+  <td>24</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>beta-Alanine metabolism</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>1.70E-02</td>
+  <td>54</td>
+  <td>7</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Aldosterone-regulated sodium reabsorption</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>6.05E-03</td>
+  <td>56</td>
+  <td>7</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Prostate cancer</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>3.28E-02</td>
+  <td>58</td>
+  <td>11</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Phosphatidylinositol signaling system</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>2.75E-07</td>
+  <td>58</td>
+  <td>16</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Amyotrophic lateral sclerosis (ALS)</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>1.63E-02</td>
+  <td>59</td>
+  <td>7</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Protein processing in endoplasmic reticulum</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>5.45E-06</td>
+  <td>60</td>
+  <td>12</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Central carbon metabolism in cancer</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>4.55E-02</td>
+  <td>63</td>
+  <td>9</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Human papillomavirus infection</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>3.69E-32</td>
+  <td>68</td>
+  <td>46</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>Oxytocin signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>1.12E-06</td>
+  <td>70</td>
+  <td>19</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Cushing's syndrome</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>6.48E-07</td>
+  <td>71</td>
+  <td>18</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Thyroid hormone signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>2.97E-06</td>
+  <td>72</td>
+  <td>17</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Cellular senescence</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>1.32E-04</td>
+  <td>75</td>
+  <td>16</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>HTLV-I infection</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>4.47E-09</td>
+  <td>75</td>
+  <td>24</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>cAMP signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>2.86E-09</td>
+  <td>76</td>
+  <td>26</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Epstein-Barr virus infection</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>9.69E-11</td>
+  <td>76</td>
+  <td>16</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>TGF-beta signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>2.44E-02</td>
+  <td>77</td>
+  <td>9</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>PI3K-Akt signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>5.97E-23</td>
+  <td>79</td>
+  <td>49</td>
+  <td>18</td>
+ </tr>
+ <tr>
+  <td>Insulin signaling pathway</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>1.09E-03</td>
+  <td>83</td>
+  <td>14</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Dopaminergic synapse</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>3.35E-03</td>
+  <td>85</td>
+  <td>14</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Oocyte meiosis</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>1.52E-04</td>
+  <td>87</td>
+  <td>16</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Dilated cardiomyopathy (DCM)</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>2.17E-02</td>
+  <td>104</td>
+  <td>9</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Progesterone-mediated oocyte maturation</td>
+  <td>Colorectal</td>
+  <td>Yes</td>
+  <td>2.78E-02</td>
+  <td>115</td>
+  <td>14</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Pathways in cancer</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.26E-40</td>
+  <td>2</td>
+  <td>72</td>
+  <td>23</td>
+ </tr>
+ <tr>
+  <td>PI3K-Akt signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>2.34E-40</td>
+  <td>2</td>
+  <td>63</td>
+  <td>18</td>
+ </tr>
+ <tr>
+  <td>MAPK signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.69E-26</td>
+  <td>4</td>
+  <td>48</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>cAMP signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>5.88E-26</td>
+  <td>4</td>
+  <td>38</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Focal adhesion</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>3.69E-21</td>
+  <td>5</td>
+  <td>35</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Human papillomavirus infection</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>4.63E-17</td>
+  <td>8</td>
+  <td>41</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>Oxytocin signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>8.15E-12</td>
+  <td>9</td>
+  <td>25</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Proteoglycans in cancer</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>3.32E-12</td>
+  <td>10</td>
+  <td>29</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Cytokine-cytokine receptor interaction</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>2.03E-16</td>
+  <td>11</td>
+  <td>37</td>
+  <td>13</td>
+ </tr>
+ <tr>
+  <td>Calcium signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>2.32E-10</td>
+  <td>13</td>
+  <td>25</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Cushing's syndrome</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>2.34E-08</td>
+  <td>16</td>
+  <td>21</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Wnt signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>3.50E-11</td>
+  <td>17</td>
+  <td>24</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Rap1 signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>5.13E-09</td>
+  <td>17</td>
+  <td>26</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Jak-STAT signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>5.28E-12</td>
+  <td>18</td>
+  <td>25</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Estrogen signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.40E-07</td>
+  <td>18</td>
+  <td>20</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Ras signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.39E-08</td>
+  <td>19</td>
+  <td>28</td>
+  <td>12</td>
+ </tr>
+ <tr>
+  <td>cGMP-PKG signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.13E-06</td>
+  <td>20</td>
+  <td>21</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Circadian entrainment</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>6.34E-09</td>
+  <td>21</td>
+  <td>17</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Platelet activation</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.06E-07</td>
+  <td>21</td>
+  <td>18</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Serotonergic synapse</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>4.90E-07</td>
+  <td>22</td>
+  <td>14</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Relaxin signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>4.01E-06</td>
+  <td>23</td>
+  <td>19</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Inflammatory mediator regulation of TRP channels</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.16E-05</td>
+  <td>24</td>
+  <td>15</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Regulation of actin cytoskeleton</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>7.09E-07</td>
+  <td>25</td>
+  <td>22</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>MicroRNAs in cancer</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.06E-05</td>
+  <td>28</td>
+  <td>27</td>
+  <td>13</td>
+ </tr>
+ <tr>
+  <td>Parathyroid_hormone synthesis secretion and action</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.42E-04</td>
+  <td>30</td>
+  <td>14</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Breast cancer</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.84E-04</td>
+  <td>32</td>
+  <td>18</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Gastric cancer</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>2.02E-05</td>
+  <td>33</td>
+  <td>19</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Hepatitis B</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.01E-04</td>
+  <td>34</td>
+  <td>17</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Metabolism of xenobiotics by cytochrome P450</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>4.38E-04</td>
+  <td>34</td>
+  <td>12</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Signaling pathways regulating pluripotency of stem cells</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>2.41E-04</td>
+  <td>34</td>
+  <td>15</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>HTLV-I infection</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>3.83E-04</td>
+  <td>38</td>
+  <td>21</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Dopaminergic synapse</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.68E-03</td>
+  <td>39</td>
+  <td>16</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>AGE-RAGE signaling pathway in diabetic complications</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.25E-04</td>
+  <td>39</td>
+  <td>14</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Kaposi's sarcoma-associated herpesvirus infection</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>5.85E-04</td>
+  <td>41</td>
+  <td>18</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Tuberculosis</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>2.38E-03</td>
+  <td>42</td>
+  <td>18</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Choline metabolism in cancer</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.65E-03</td>
+  <td>43</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Fluid shear stress and atherosclerosis</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.35E-03</td>
+  <td>44</td>
+  <td>16</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Drug metabolism - cytochrome P450</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>4.36E-03</td>
+  <td>45</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Melanoma</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>5.56E-03</td>
+  <td>45</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Ovarian steroidogenesis</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>8.49E-03</td>
+  <td>46</td>
+  <td>7</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Arachidonic acid metabolism</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>5.79E-03</td>
+  <td>46</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Alcoholism</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.43E-02</td>
+  <td>50</td>
+  <td>16</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Phospholipase D signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>5.07E-03</td>
+  <td>53</td>
+  <td>14</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Toll-like receptor signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.43E-02</td>
+  <td>54</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Basal cell carcinoma</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>8.08E-03</td>
+  <td>57</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Chemical carcinogenesis</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>4.95E-02</td>
+  <td>58</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Vascular smooth muscle contraction</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>3.28E-02</td>
+  <td>58</td>
+  <td>13</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>VEGF signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.03E-02</td>
+  <td>58</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Endometrial cancer</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.03E-02</td>
+  <td>59</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Axon guidance</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>3.48E-02</td>
+  <td>61</td>
+  <td>16</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Retinol metabolism</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>4.01E-02</td>
+  <td>61</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Chemokine signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>1.82E-02</td>
+  <td>62</td>
+  <td>17</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Porphyrin and chlorophyll metabolism</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>2.10E-02</td>
+  <td>62</td>
+  <td>7</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Transcriptional misregulation in cancer</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>4.12E-02</td>
+  <td>64</td>
+  <td>5</td>
+  <td>1</td>
+ </tr>
+ <tr>
+  <td>Retrograde endocannabinoid signaling</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>7.07E-03</td>
+  <td>70</td>
+  <td>13</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Neurotrophin signaling pathway</td>
+  <td>Kidney</td>
+  <td>Yes</td>
+  <td>3.20E-02</td>
+  <td>70</td>
+  <td>12</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Pathways in cancer</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>3.36E-55</td>
+  <td>2</td>
+  <td>78</td>
+  <td>23</td>
+ </tr>
+ <tr>
+  <td>PI3K-Akt signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>6.57E-48</td>
+  <td>3</td>
+  <td>64</td>
+  <td>18</td>
+ </tr>
+ <tr>
+  <td>Human papillomavirus infection</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.89E-48</td>
+  <td>3</td>
+  <td>58</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>MAPK signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.32E-45</td>
+  <td>3</td>
+  <td>57</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>Hippo signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>9.68E-17</td>
+  <td>9</td>
+  <td>27</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Purine metabolism</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.45E-17</td>
+  <td>10</td>
+  <td>30</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Wnt signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>5.43E-20</td>
+  <td>10</td>
+  <td>29</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Ras signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>8.41E-17</td>
+  <td>11</td>
+  <td>34</td>
+  <td>12</td>
+ </tr>
+ <tr>
+  <td>Insulin resistance</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.05E-14</td>
+  <td>13</td>
+  <td>20</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Axon guidance</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.05E-13</td>
+  <td>14</td>
+  <td>27</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>NOD-like receptor signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.54E-12</td>
+  <td>14</td>
+  <td>25</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Proteoglycans in cancer</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>3.39E-15</td>
+  <td>14</td>
+  <td>30</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Fluid shear stress and atherosclerosis</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>5.79E-12</td>
+  <td>17</td>
+  <td>22</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Apelin signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.19E-11</td>
+  <td>18</td>
+  <td>22</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Regulation of actin cytoskeleton</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>5.04E-11</td>
+  <td>18</td>
+  <td>25</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Autophagy - animal</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.56E-10</td>
+  <td>19</td>
+  <td>20</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Focal adhesion</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>6.63E-17</td>
+  <td>20</td>
+  <td>30</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Necroptosis</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.13E-09</td>
+  <td>22</td>
+  <td>22</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Cellular senescence</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>4.11E-10</td>
+  <td>24</td>
+  <td>23</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Hepatocellular carcinoma</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.69E-08</td>
+  <td>24</td>
+  <td>23</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Toxoplasmosis</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.29E-09</td>
+  <td>25</td>
+  <td>17</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>cAMP signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.68E-10</td>
+  <td>26</td>
+  <td>26</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Oxytocin signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.31E-12</td>
+  <td>26</td>
+  <td>24</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Apoptosis</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>3.89E-07</td>
+  <td>28</td>
+  <td>19</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Thyroid hormone signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>3.97E-07</td>
+  <td>28</td>
+  <td>17</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Adrenergic signaling in cardiomyocytes</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.54E-08</td>
+  <td>28</td>
+  <td>22</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>AMPK signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>3.48E-08</td>
+  <td>29</td>
+  <td>16</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Neurotrophin signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>6.76E-07</td>
+  <td>30</td>
+  <td>17</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Hepatitis B</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.08E-06</td>
+  <td>31</td>
+  <td>19</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>p53 signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.72E-06</td>
+  <td>33</td>
+  <td>13</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>GABAergic synapse</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>8.76E-06</td>
+  <td>36</td>
+  <td>13</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Longevity regulating pathway - multiple species</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.32E-05</td>
+  <td>38</td>
+  <td>11</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Chronic myeloid leukemia</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>7.48E-06</td>
+  <td>38</td>
+  <td>13</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Glycerophospholipid metabolism</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.69E-06</td>
+  <td>40</td>
+  <td>15</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Rap1 signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>5.10E-06</td>
+  <td>40</td>
+  <td>24</td>
+  <td>11</td>
+ </tr>
+ <tr>
+  <td>FoxO signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>8.66E-05</td>
+  <td>44</td>
+  <td>17</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>mTOR signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>6.77E-05</td>
+  <td>45</td>
+  <td>18</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Sphingolipid signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.64E-04</td>
+  <td>47</td>
+  <td>14</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>cGMP-PKG signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.75E-04</td>
+  <td>48</td>
+  <td>18</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Cushing's syndrome</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>3.22E-06</td>
+  <td>48</td>
+  <td>18</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Small cell lung cancer</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>3.78E-04</td>
+  <td>49</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Breast cancer</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>5.99E-04</td>
+  <td>50</td>
+  <td>17</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>HTLV-I infection</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>5.75E-04</td>
+  <td>51</td>
+  <td>20</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Calcium signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>8.34E-05</td>
+  <td>55</td>
+  <td>20</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Choline metabolism in cancer</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>3.48E-04</td>
+  <td>55</td>
+  <td>12</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Vascular smooth muscle contraction</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.76E-03</td>
+  <td>55</td>
+  <td>14</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Thyroid cancer</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>4.11E-03</td>
+  <td>56</td>
+  <td>8</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Insulin signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.08E-03</td>
+  <td>58</td>
+  <td>15</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Gastric cancer</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>3.75E-03</td>
+  <td>58</td>
+  <td>17</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>RIG-I-like receptor signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>4.31E-03</td>
+  <td>59</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Dilated cardiomyopathy (DCM)</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.31E-03</td>
+  <td>60</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>VEGF signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.21E-02</td>
+  <td>62</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>N-Glycan biosynthesis</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.24E-02</td>
+  <td>63</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Melanoma</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.08E-03</td>
+  <td>63</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Chagas disease (American trypanosomiasis)</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.57E-02</td>
+  <td>64</td>
+  <td>11</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Pyrimidine metabolism</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>9.18E-04</td>
+  <td>66</td>
+  <td>14</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Kaposi's sarcoma-associated herpesvirus infection</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>7.32E-04</td>
+  <td>67</td>
+  <td>17</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Progesterone-mediated oocyte maturation</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>5.29E-03</td>
+  <td>68</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Prolactin signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.65E-02</td>
+  <td>73</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Circadian entrainment</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.94E-02</td>
+  <td>74</td>
+  <td>11</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Chemokine signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.17E-02</td>
+  <td>76</td>
+  <td>17</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Phospholipase D signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>3.92E-02</td>
+  <td>78</td>
+  <td>12</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Leukocyte transendothelial migration</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>7.94E-03</td>
+  <td>80</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Endocrine resistance</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>2.16E-03</td>
+  <td>85</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>GnRH signaling pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>3.76E-02</td>
+  <td>85</td>
+  <td>11</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Serotonergic synapse</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>5.21E-03</td>
+  <td>87</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Longevity regulating pathway</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>4.58E-02</td>
+  <td>88</td>
+  <td>9</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Osteoclast differentiation</td>
+  <td>Liver</td>
+  <td>No</td>
+  <td>1.84E-02</td>
+  <td>94</td>
+  <td>13</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Pathways in cancer</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>3.05E-153</td>
+  <td>1</td>
+  <td>113</td>
+  <td>23</td>
+ </tr>
+ <tr>
+  <td>Human papillomavirus infection</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>8.90E-71</td>
+  <td>3</td>
+  <td>64</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>PI3K-Akt signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>6.12E-68</td>
+  <td>3</td>
+  <td>68</td>
+  <td>18</td>
+ </tr>
+ <tr>
+  <td>MAPK signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.15E-64</td>
+  <td>3</td>
+  <td>61</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>Ras signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.77E-47</td>
+  <td>6</td>
+  <td>47</td>
+  <td>12</td>
+ </tr>
+ <tr>
+  <td>Focal adhesion</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.07E-46</td>
+  <td>7</td>
+  <td>43</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Proteoglycans in cancer</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>8.60E-41</td>
+  <td>8</td>
+  <td>41</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Purine metabolism</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.06E-33</td>
+  <td>12</td>
+  <td>35</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Hippo signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.39E-30</td>
+  <td>12</td>
+  <td>32</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>cAMP signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.79E-29</td>
+  <td>13</td>
+  <td>35</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Regulation of actin cytoskeleton</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>3.64E-28</td>
+  <td>16</td>
+  <td>33</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Oxytocin signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>5.45E-27</td>
+  <td>16</td>
+  <td>30</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Fluid shear stress and atherosclerosis</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>7.28E-28</td>
+  <td>17</td>
+  <td>29</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Axon guidance</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.85E-27</td>
+  <td>17</td>
+  <td>32</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>HTLV-I infection</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.11E-25</td>
+  <td>17</td>
+  <td>34</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Rap1 signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>8.53E-27</td>
+  <td>18</td>
+  <td>36</td>
+  <td>11</td>
+ </tr>
+ <tr>
+  <td>Chemokine signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>9.03E-22</td>
+  <td>21</td>
+  <td>30</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Cushing's syndrome</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.64E-22</td>
+  <td>21</td>
+  <td>27</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Wnt signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>7.60E-22</td>
+  <td>22</td>
+  <td>28</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Insulin signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.08E-21</td>
+  <td>23</td>
+  <td>26</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Calcium signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>3.32E-22</td>
+  <td>24</td>
+  <td>30</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Relaxin signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.09E-20</td>
+  <td>25</td>
+  <td>25</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>mTOR signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.52E-21</td>
+  <td>25</td>
+  <td>28</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Melanogenesis</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>8.04E-21</td>
+  <td>26</td>
+  <td>24</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Circadian entrainment</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.75E-18</td>
+  <td>28</td>
+  <td>21</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Adrenergic signaling in cardiomyocytes</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>9.08E-19</td>
+  <td>28</td>
+  <td>26</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Parathyroid hormone synthesis secretion and action</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>7.59E-18</td>
+  <td>33</td>
+  <td>20</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Cholinergic synapse</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>3.46E-16</td>
+  <td>36</td>
+  <td>20</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Phospholipase D signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>5.37E-16</td>
+  <td>37</td>
+  <td>21</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Hepatocellular carcinoma</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>3.20E-15</td>
+  <td>37</td>
+  <td>26</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Signaling pathways regulating pluripotency of stem cells</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.82E-15</td>
+  <td>37</td>
+  <td>21</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Necroptosis</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>3.18E-14</td>
+  <td>41</td>
+  <td>24</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Apelin signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.28E-14</td>
+  <td>43</td>
+  <td>22</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>GnRH signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>7.39E-13</td>
+  <td>43</td>
+  <td>18</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Endocytosis</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.39E-13</td>
+  <td>44</td>
+  <td>18</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Gastric cancer</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>6.07E-13</td>
+  <td>45</td>
+  <td>23</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Sphingolipid signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>3.50E-14</td>
+  <td>45</td>
+  <td>19</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Insulin resistance</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>4.43E-11</td>
+  <td>46</td>
+  <td>17</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>cGMP-PKG signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.53E-12</td>
+  <td>46</td>
+  <td>23</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Neurotrophin signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>5.17E-12</td>
+  <td>47</td>
+  <td>19</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Toxoplasmosis</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.21E-13</td>
+  <td>47</td>
+  <td>18</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>FoxO signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>5.01E-13</td>
+  <td>48</td>
+  <td>21</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>EGFR tyrosine kinase inhibitor resistance</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>8.24E-12</td>
+  <td>51</td>
+  <td>16</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Breast cancer</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>9.78E-12</td>
+  <td>51</td>
+  <td>22</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Jak-STAT signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.18E-12</td>
+  <td>51</td>
+  <td>23</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Autophagy - animal</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>3.20E-15</td>
+  <td>51</td>
+  <td>21</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Platelet activation</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.37E-11</td>
+  <td>53</td>
+  <td>17</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Gap junction</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>8.81E-10</td>
+  <td>54</td>
+  <td>16</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>ErbB signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.89E-11</td>
+  <td>55</td>
+  <td>17</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Longevity regulating pathway - multiple species</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.14E-09</td>
+  <td>56</td>
+  <td>14</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>AGE-RAGE signaling pathway in diabetic complications</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.10E-10</td>
+  <td>56</td>
+  <td>17</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Vascular smooth muscle contraction</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>4.83E-09</td>
+  <td>56</td>
+  <td>18</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Fc gamma R-mediated phagocytosis</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>5.52E-10</td>
+  <td>56</td>
+  <td>16</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Apoptosis</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>7.69E-10</td>
+  <td>57</td>
+  <td>20</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Tuberculosis</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>9.69E-10</td>
+  <td>57</td>
+  <td>23</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Glutamatergic synapse</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>4.63E-09</td>
+  <td>58</td>
+  <td>16</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Hepatitis B</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.19E-08</td>
+  <td>60</td>
+  <td>19</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>AMPK signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.97E-09</td>
+  <td>61</td>
+  <td>16</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Thermogenesis</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.13E-08</td>
+  <td>61</td>
+  <td>16</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Non-alcoholic fatty liver disease (NAFLD)</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.84E-08</td>
+  <td>63</td>
+  <td>14</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Kaposi's sarcoma-associated herpesvirus infection</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.12E-07</td>
+  <td>66</td>
+  <td>20</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Basal cell carcinoma</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.71E-07</td>
+  <td>68</td>
+  <td>11</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Dopaminergic synapse</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>7.79E-07</td>
+  <td>68</td>
+  <td>18</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Prostate cancer</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>4.18E-07</td>
+  <td>68</td>
+  <td>15</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Glucagon signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.44E-07</td>
+  <td>70</td>
+  <td>15</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>NOD-like receptor signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.45E-07</td>
+  <td>74</td>
+  <td>20</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Pancreatic cancer</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>5.49E-07</td>
+  <td>76</td>
+  <td>13</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Epstein-Barr virus infection</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>4.04E-07</td>
+  <td>77</td>
+  <td>13</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Mitophagy - animal</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.54E-06</td>
+  <td>78</td>
+  <td>12</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Glioma</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.42E-05</td>
+  <td>78</td>
+  <td>12</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Influenza A</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>7.37E-06</td>
+  <td>81</td>
+  <td>15</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Inflammatory mediator regulation of TRP channels</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>8.88E-05</td>
+  <td>84</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Small cell lung cancer</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.50E-06</td>
+  <td>85</td>
+  <td>14</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Estrogen signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>4.83E-06</td>
+  <td>85</td>
+  <td>17</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Endocrine resistance</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.68E-05</td>
+  <td>86</td>
+  <td>14</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>TGF-beta signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>8.56E-05</td>
+  <td>87</td>
+  <td>12</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Osteoclast differentiation</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>5.32E-05</td>
+  <td>88</td>
+  <td>15</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Regulation of lipolysis in adipocytes</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>3.17E-05</td>
+  <td>88</td>
+  <td>10</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Chronic myeloid leukemia</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.83E-05</td>
+  <td>91</td>
+  <td>12</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Glycerophospholipid metabolism</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.40E-04</td>
+  <td>91</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Legionellosis</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.08E-04</td>
+  <td>92</td>
+  <td>8</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Longevity regulating pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.00E-04</td>
+  <td>93</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Th1 and Th2 cell differentiation</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.73E-04</td>
+  <td>95</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Thyroid hormone signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.53E-04</td>
+  <td>97</td>
+  <td>14</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Cell adhesion molecules (CAMs)</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>3.10E-06</td>
+  <td>97</td>
+  <td>18</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Cellular senescence</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.33E-04</td>
+  <td>98</td>
+  <td>17</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Chagas disease (American trypanosomiasis)</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.77E-03</td>
+  <td>100</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Fc epsilon RI signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>8.68E-05</td>
+  <td>101</td>
+  <td>10</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Acute myeloid leukemia</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>7.69E-04</td>
+  <td>101</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Colorectal cancer</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>4.47E-04</td>
+  <td>101</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>VEGF signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>5.99E-05</td>
+  <td>103</td>
+  <td>10</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Epithelial cell signaling in Helicobacter pylori infection</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.64E-03</td>
+  <td>103</td>
+  <td>7</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>ECM-receptor interaction</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>9.52E-04</td>
+  <td>103</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>T cell receptor signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.02E-04</td>
+  <td>105</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Renin secretion</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.83E-02</td>
+  <td>105</td>
+  <td>8</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>GABAergic synapse</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>7.46E-03</td>
+  <td>106</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>TNF signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.57E-03</td>
+  <td>106</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Non-small cell lung cancer</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>3.53E-04</td>
+  <td>107</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>C-type lectin receptor signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.19E-03</td>
+  <td>108</td>
+  <td>13</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Long-term depression</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.69E-02</td>
+  <td>109</td>
+  <td>8</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>HIF-1 signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>5.97E-03</td>
+  <td>110</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Dilated cardiomyopathy (DCM)</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.83E-03</td>
+  <td>110</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Th17 cell differentiation</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>6.08E-03</td>
+  <td>110</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Bacterial invasion of epithelial cells</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>4.17E-03</td>
+  <td>115</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Protein processing in endoplasmic reticulum</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.79E-03</td>
+  <td>117</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Salmonella infection</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.66E-02</td>
+  <td>117</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Toll-like receptor signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.16E-02</td>
+  <td>117</td>
+  <td>11</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Notch signaling pathway</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>3.14E-02</td>
+  <td>117</td>
+  <td>8</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Melanoma</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>4.09E-03</td>
+  <td>118</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Platinum drug resistance</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.82E-02</td>
+  <td>119</td>
+  <td>7</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Choline metabolism in cancer</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>8.75E-03</td>
+  <td>123</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Natural killer cell mediated cytotoxicity</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>1.11E-02</td>
+  <td>128</td>
+  <td>14</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>MicroRNAs in cancer</td>
+  <td>Lung</td>
+  <td>Yes</td>
+  <td>2.84E-03</td>
+  <td>157</td>
+  <td>30</td>
+  <td>13</td>
+ </tr>
+ <tr>
+  <td>Fluid shear stress and atherosclerosis</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.06E-25</td>
+  <td>2</td>
+  <td>28</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Human papillomavirus infection</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.78E-23</td>
+  <td>4</td>
+  <td>41</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>Pathways in cancer</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>3.86E-23</td>
+  <td>5</td>
+  <td>53</td>
+  <td>23</td>
+ </tr>
+ <tr>
+  <td>PI3K-Akt signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>4.65E-19</td>
+  <td>6</td>
+  <td>43</td>
+  <td>18</td>
+ </tr>
+ <tr>
+  <td>Rap1 signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.25E-19</td>
+  <td>8</td>
+  <td>30</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Hippo signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>4.30E-15</td>
+  <td>9</td>
+  <td>24</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>cGMP-PKG signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>3.80E-15</td>
+  <td>13</td>
+  <td>24</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Endocrine resistance</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>8.99E-11</td>
+  <td>14</td>
+  <td>17</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Autophagy - animal</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>2.48E-10</td>
+  <td>14</td>
+  <td>18</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Proteoglycans in cancer</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>8.82E-12</td>
+  <td>14</td>
+  <td>26</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>MAPK signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>3.02E-15</td>
+  <td>16</td>
+  <td>35</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>Focal adhesion</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.08E-10</td>
+  <td>16</td>
+  <td>25</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Apoptosis</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>8.08E-09</td>
+  <td>17</td>
+  <td>19</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Central carbon metabolism in cancer</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>3.80E-09</td>
+  <td>17</td>
+  <td>13</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Purine metabolism</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>5.50E-10</td>
+  <td>20</td>
+  <td>23</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>HTLV-I infection</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>5.19E-07</td>
+  <td>22</td>
+  <td>22</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Oocyte meiosis</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>6.85E-06</td>
+  <td>27</td>
+  <td>16</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Pancreatic cancer</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>5.78E-06</td>
+  <td>28</td>
+  <td>12</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Wnt signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.99E-07</td>
+  <td>30</td>
+  <td>20</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Cushing's syndrome</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.32E-05</td>
+  <td>31</td>
+  <td>17</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Breast cancer</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>3.44E-06</td>
+  <td>34</td>
+  <td>19</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Salivary secretion</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>6.56E-04</td>
+  <td>36</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Colorectal cancer</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.89E-04</td>
+  <td>37</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Adherens junction</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.15E-04</td>
+  <td>38</td>
+  <td>12</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Hepatocellular carcinoma</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.78E-04</td>
+  <td>38</td>
+  <td>19</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Parathyroid hormone synthesis secretion and action</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>3.04E-04</td>
+  <td>39</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Thyroid hormone signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>3.15E-05</td>
+  <td>39</td>
+  <td>15</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>AGE-RAGE signaling pathway in diabetic complications</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>4.80E-04</td>
+  <td>40</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Longevity regulating pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.05E-05</td>
+  <td>40</td>
+  <td>12</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Apelin signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.63E-05</td>
+  <td>42</td>
+  <td>17</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Glycerophospholipid metabolism</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.50E-03</td>
+  <td>44</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Axon guidance</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>5.46E-05</td>
+  <td>44</td>
+  <td>19</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Melanogenesis</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.54E-03</td>
+  <td>44</td>
+  <td>14</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Thermogenesis</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>4.86E-03</td>
+  <td>48</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Mucin type O-glycan biosynthesis</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.79E-03</td>
+  <td>49</td>
+  <td>7</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Glutathione metabolism</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.00E-03</td>
+  <td>53</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>C-type lectin receptor signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>7.56E-03</td>
+  <td>56</td>
+  <td>13</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Gastric cancer</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>2.84E-04</td>
+  <td>57</td>
+  <td>17</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Ras signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>3.37E-05</td>
+  <td>57</td>
+  <td>23</td>
+  <td>12</td>
+ </tr>
+ <tr>
+  <td>Influenza A</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>2.31E-02</td>
+  <td>57</td>
+  <td>13</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Prolactin signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.28E-02</td>
+  <td>59</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Small cell lung cancer</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>2.21E-03</td>
+  <td>59</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Epstein-Barr virus infection</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.98E-02</td>
+  <td>59</td>
+  <td>11</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>mTOR signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>4.70E-04</td>
+  <td>60</td>
+  <td>15</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Endometrial cancer</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>8.63E-03</td>
+  <td>62</td>
+  <td>9</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Platelet activation</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>2.12E-02</td>
+  <td>63</td>
+  <td>13</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Neurotrophin signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>8.60E-03</td>
+  <td>64</td>
+  <td>13</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Adrenergic signaling in cardiomyocytes</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>4.75E-03</td>
+  <td>65</td>
+  <td>16</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>FoxO signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>9.21E-04</td>
+  <td>65</td>
+  <td>15</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Phospholipase D signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>3.42E-02</td>
+  <td>65</td>
+  <td>12</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Oxytocin signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>2.34E-04</td>
+  <td>67</td>
+  <td>17</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Phosphatidylinositol signaling system</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>1.95E-02</td>
+  <td>67</td>
+  <td>11</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Cellular senescence</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>3.47E-04</td>
+  <td>68</td>
+  <td>17</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Tuberculosis</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>3.31E-02</td>
+  <td>69</td>
+  <td>16</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>cAMP signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>2.20E-10</td>
+  <td>71</td>
+  <td>27</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>B cell receptor signaling pathway</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>2.67E-02</td>
+  <td>81</td>
+  <td>9</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Glycine serine and threonine metabolism</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>9.42E-03</td>
+  <td>82</td>
+  <td>7</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>Long-term depression</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>4.53E-02</td>
+  <td>88</td>
+  <td>8</td>
+  <td>3</td>
+ </tr>
+ <tr>
+  <td>Kaposi's sarcoma-associated herpesvirus infection</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>3.44E-02</td>
+  <td>97</td>
+  <td>14</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Regulation of actin cytoskeleton</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>2.26E-02</td>
+  <td>118</td>
+  <td>16</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Hepatitis B</td>
+  <td>Prostate</td>
+  <td>No</td>
+  <td>2.85E-04</td>
+  <td>132</td>
+  <td>15</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>PI3K-Akt signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>5.02E-38</td>
+  <td>1</td>
+  <td>56</td>
+  <td>18</td>
+ </tr>
+ <tr>
+  <td>MAPK signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>4.73E-32</td>
+  <td>2</td>
+  <td>47</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>HTLV-I infection</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>3.13E-15</td>
+  <td>5</td>
+  <td>29</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Pathways in cancer</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>2.84E-12</td>
+  <td>6</td>
+  <td>46</td>
+  <td>23</td>
+ </tr>
+ <tr>
+  <td>Ras signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>7.45E-16</td>
+  <td>9</td>
+  <td>32</td>
+  <td>12</td>
+ </tr>
+ <tr>
+  <td>Hepatocellular carcinoma</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>1.64E-11</td>
+  <td>9</td>
+  <td>25</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Oocyte meiosis</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>2.86E-13</td>
+  <td>10</td>
+  <td>21</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Wnt signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>4.38E-10</td>
+  <td>10</td>
+  <td>22</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Gastric cancer</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>5.31E-10</td>
+  <td>12</td>
+  <td>22</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Proteoglycans in cancer</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>1.15E-09</td>
+  <td>12</td>
+  <td>25</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Cushing's syndrome</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>1.67E-09</td>
+  <td>13</td>
+  <td>20</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Oxytocin signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>5.48E-09</td>
+  <td>14</td>
+  <td>21</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Human papillomavirus infection</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>1.30E-10</td>
+  <td>14</td>
+  <td>33</td>
+  <td>15</td>
+ </tr>
+ <tr>
+  <td>Cellular senescence</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>6.70E-08</td>
+  <td>19</td>
+  <td>20</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Chemokine signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>5.65E-07</td>
+  <td>19</td>
+  <td>21</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Vascular smooth muscle contraction</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>5.12E-07</td>
+  <td>19</td>
+  <td>17</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Dopaminergic synapse</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>8.18E-08</td>
+  <td>21</td>
+  <td>19</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Phospholipase D signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>4.30E-06</td>
+  <td>22</td>
+  <td>16</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>cAMP signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>4.68E-05</td>
+  <td>25</td>
+  <td>21</td>
+  <td>10</td>
+ </tr>
+ <tr>
+  <td>Pyrimidine metabolism</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>2.51E-05</td>
+  <td>25</td>
+  <td>15</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Calcium signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>3.97E-05</td>
+  <td>25</td>
+  <td>20</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Parathyroid hormone synthesis secretion and action</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>3.97E-05</td>
+  <td>27</td>
+  <td>14</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Arachidonic acid metabolism</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>1.22E-04</td>
+  <td>28</td>
+  <td>12</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Estrogen signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>2.67E-04</td>
+  <td>28</td>
+  <td>16</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Insulin resistance</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>6.79E-04</td>
+  <td>33</td>
+  <td>13</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>TGF-beta signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>2.69E-04</td>
+  <td>36</td>
+  <td>11</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Prolactin signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>1.44E-02</td>
+  <td>38</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>cGMP-PKG signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>5.48E-03</td>
+  <td>39</td>
+  <td>16</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>Relaxin signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>2.24E-02</td>
+  <td>40</td>
+  <td>14</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Glutamatergic synapse</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>3.27E-03</td>
+  <td>41</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Progesterone-mediated oocyte maturation</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>1.82E-02</td>
+  <td>43</td>
+  <td>11</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Rap1 signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>4.02E-04</td>
+  <td>43</td>
+  <td>21</td>
+  <td>11</td>
+ </tr>
+ <tr>
+  <td>Platelet activation</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>4.97E-03</td>
+  <td>44</td>
+  <td>13</td>
+  <td>6</td>
+ </tr>
+ <tr>
+  <td>Purine metabolism</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>5.40E-06</td>
+  <td>49</td>
+  <td>20</td>
+  <td>9</td>
+ </tr>
+ <tr>
+  <td>Endocrine resistance</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>1.18E-02</td>
+  <td>51</td>
+  <td>11</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>FoxO signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>4.94E-02</td>
+  <td>51</td>
+  <td>13</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>Serotonergic synapse</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>2.58E-02</td>
+  <td>53</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Cholinergic synapse</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>4.92E-03</td>
+  <td>55</td>
+  <td>12</td>
+  <td>5</td>
+ </tr>
+ <tr>
+  <td>Epstein-Barr virus infection</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>1.96E-02</td>
+  <td>58</td>
+  <td>10</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>Apelin signaling pathway</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>1.13E-02</td>
+  <td>61</td>
+  <td>14</td>
+  <td>7</td>
+ </tr>
+ <tr>
+  <td>MicroRNAs in cancer</td>
+  <td>Thyroid</td>
+  <td>No</td>
+  <td>2.07E-02</td>
+  <td>97</td>
+  <td>20</td>
+  <td>13</td>
+ </tr>
+</table>
+<button>Export HTML table to CSV file</button>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<button onclick="sortTable()">Sort</button>
+ 
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function download_csv(csv, filename) {
+    var csvFile;
+    var downloadLink;
+
+    // CSV FILE
+    csvFile = new Blob([csv], {type: "text/csv"});
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+    // We have to create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Make sure that the link is not displayed
+    downloadLink.style.display = "none";
+
+    // Add the link to your DOM
+    document.body.appendChild(downloadLink);
+
+    // Lanzamos
+    downloadLink.click();
+}
+
+function export_table_to_csv(html, filename) {
+	var csv = [];
+	var rows = document.querySelectorAll("table tr");
+	
+    for (var i = 0; i < rows.length; i++) {
+		var row = [], cols = rows[i].querySelectorAll("td, th");
+		
+        for (var j = 0; j < cols.length; j++) 
+            row.push(cols[j].innerText);
+        
+		csv.push(row.join(","));		
+	}
+
+    // Download CSV
+    download_csv(csv.join("\n"), filename);
+}
+
+document.querySelector("button").addEventListener("click", function () {
+    var html = document.querySelector("table").outerHTML;
+	export_table_to_csv(html, "table.csv");
+});
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[0];
+      y = rows[i + 1].getElementsByTagName("TD")[0];
+      //check if the two rows should switch place:
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
+</script>
+</body>
+</html>
