@@ -1,2 +1,0 @@
-# Results
-Ranked Dysregulated Pathways
